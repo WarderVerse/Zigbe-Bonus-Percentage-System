@@ -1,0 +1,53 @@
+/* No external fonts/CDNs: the app works fully offline. */
+:root {
+  --ink: #16222f; --slate: #5b6b7b; --paper: #f3f5f7; --card: #fff; --rule: #d9e0e6;
+  --gold: #e3a82b; --ok: #1d7a4b; --ok-bg: #e2f3ea; --no: #a33a2b; --no-bg: #f8e6e2;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.5 var(--font); }
+.topbar { display: flex; justify-content: space-between; align-items: center; padding: .75rem 1.25rem;
+  background: var(--ink); color: #fff; }
+.brand { font-weight: 650; letter-spacing: .01em; }
+.page { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; }
+h1 { font-size: 1.5rem; margin: 0 0 .25rem; }
+h2 { font-size: 1rem; margin: 0 0 .5rem; color: var(--slate); font-weight: 600; }
+.muted { color: var(--slate); } .strong { font-weight: 650; }
+button { font: inherit; cursor: pointer; border: 0; border-radius: 6px; padding: .6rem 1.1rem;
+  background: var(--ink); color: #fff; }
+button.link { background: none; color: #fff; text-decoration: underline; padding: .25rem; }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+.leader { background: var(--ink); color: #fff; border-radius: 10px; padding: 1.5rem 1.75rem; margin: 1rem 0;
+  border-left: 8px solid var(--gold); }
+.leader h2 { color: #c4cfda; }
+.leader-name { font-size: 1.75rem; font-weight: 700; margin: 0; }
+.leader-pct { font-size: 3.5rem; font-weight: 750; line-height: 1.1; margin: .1rem 0; color: var(--gold);
+  font-variant-numeric: tabular-nums; }
+.leader-meta { margin: 0; color: #c4cfda; }
+
+.banner { background: #fff6dc; border: 1px solid var(--gold); padding: .75rem 1rem; border-radius: 8px; margin: 1rem 0; }
+.box { background: var(--card); border: 1px solid var(--rule); border-radius: 8px; padding: 1.1rem 1.25rem; }
+.box p { margin: .2rem 0; }
+.pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 1rem; }
+.mine { margin: 1rem 0; }
+.facts { display: grid; grid-template-columns: max-content 1fr; gap: .35rem 1.5rem; margin: 0; }
+.facts dt { color: var(--slate); } .facts dd { margin: 0; font-variant-numeric: tabular-nums; }
+
+.tablewrap { overflow-x: auto; background: var(--card); border: 1px solid var(--rule); border-radius: 8px; }
+table { border-collapse: collapse; width: 100%; min-width: 760px; }
+th, td { padding: .65rem .9rem; text-align: left; border-bottom: 1px solid var(--rule); }
+th { color: var(--slate); font-weight: 600; font-size: .9rem; background: #fafbfc; }
+tbody tr:last-child td { border-bottom: 0; }
+.num { text-align: right; font-variant-numeric: tabular-nums; }
+tr.dim td { color: var(--slate); }
+.tag { display: inline-block; padding: .1rem .55rem; border-radius: 99px; font-size: .85rem; }
+.tag.ok { background: var(--ok-bg); color: var(--ok); } .tag.no { background: var(--no-bg); color: var(--no); }
+
+.login { max-width: 360px; margin: 4vh auto; background: var(--card); border: 1px solid var(--rule);
+  border-radius: 10px; padding: 1.75rem; }
+.login label { display: block; margin-top: .9rem; font-weight: 600; }
+.login input { width: 100%; padding: .6rem; border: 1px solid var(--rule); border-radius: 6px; font: inherit; }
+.login button { width: 100%; margin-top: 1.25rem; }
+.error { color: var(--no); margin: .75rem 0 0; }
+@media (max-width: 560px) { .leader-pct { font-size: 2.75rem; } .facts { grid-template-columns: 1fr; } }

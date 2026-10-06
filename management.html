@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Leaderboard{% endblock %}
+{% block nav %}<button id="logout" class="link">Sign out</button>{% endblock %}
+{% block content %}
+<h1 id="title">FCO Disbursement Portfolio Leaderboard</h1>
+<p id="status" class="muted" aria-live="polite">Loading…</p>
+<div id="lock-banner" class="banner" hidden></div>
+<section id="leader" class="leader" aria-label="Current leader"></section>
+<section class="tablewrap" aria-label="All FCOs">
+  <table id="board">
+    <thead><tr>
+      <th>Rank</th><th>FCO</th><th class="num">Disbursement Portfolio</th><th class="num">Overdue</th>
+      <th class="num">Portfolio Balance</th><th class="num">Bonus %</th><th>Qualified?</th>
+    </tr></thead>
+    <tbody></tbody>
+  </table>
+</section>
+<div class="pair">
+  <section id="winner" class="box" aria-label="Last month winner"></section>
+  <section id="deadline" class="box" aria-label="Deadline"></section>
+</div>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/management.js') }}"></script>{% endblock %}
